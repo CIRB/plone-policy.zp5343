@@ -28,6 +28,8 @@ setup(name='policy.zp5343',
           'Plone',
           'Products.LinguaPlone',
           'cirb.zopemonitoring',
+          'plonetheme.zp5343',
+          'collective.easyslider',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

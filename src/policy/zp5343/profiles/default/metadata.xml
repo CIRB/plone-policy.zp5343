@@ -3,5 +3,7 @@
   <version>0001</version>
   <dependencies>
       <dependency>profile-Products.LinguaPlone:LinguaPlone</dependency>
+      <dependency>profile-plonetheme.zp5343:default</dependency>
+      <dependency>profile-collective.easyslider:default</dependency>
   </dependencies>
 </metadata>

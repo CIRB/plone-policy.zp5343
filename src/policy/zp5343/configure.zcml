@@ -7,5 +7,7 @@
   <five:registerPackage package="." initialize=".initialize" />
   <include file="profiles.zcml" />
   <include package="cirb.zopemonitoring" />
+  <include package="plonetheme.zp5343" />
+  <include package="collective.easyslider" />
 
 </configure>
