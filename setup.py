@@ -30,6 +30,7 @@ setup(name='policy.zp5343',
           'cirb.zopemonitoring',
           'plonetheme.zp5343',
           'collective.easyslider',
+          'webcouturier.dropdownmenu',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

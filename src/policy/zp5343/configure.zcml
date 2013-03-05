@@ -9,5 +9,6 @@
   <include package="cirb.zopemonitoring" />
   <include package="plonetheme.zp5343" />
   <include package="collective.easyslider" />
+  <include package="webcouturier.dropdownmenu" />
 
 </configure>
