@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="policy.zp5343">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="policy.zp5343"
+      directory="profiles/default"
+      description='Extension profile : A policy for zone de police 5343.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="policy.zp5343.various"
+      title="policy.zp5343: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="policy.zp5343.setuphandlers.setupVarious">
+    <depends name="Products.LinguaPlone"/>
+  </genericsetup:importStep>
+
+</configure>
