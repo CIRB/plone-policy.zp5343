@@ -6,5 +6,6 @@
       <dependency>profile-plonetheme.zp5343:default</dependency>
       <dependency>profile-collective.easyslider:default</dependency>
       <dependency>profile-webcouturier.dropdownmenu:default</dependency>
+      <dependency>profile-Products.PloneFormGen:default</dependency>
   </dependencies>
 </metadata>
