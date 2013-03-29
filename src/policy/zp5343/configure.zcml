@@ -6,6 +6,7 @@
 
   <five:registerPackage package="." initialize=".initialize" />
   <include file="profiles.zcml" />
+  <include package="Products.LinguaPlone" />
   <include package="cirb.zopemonitoring" />
   <include package="plonetheme.zp5343" />
   <include package="collective.anysurfer" />
