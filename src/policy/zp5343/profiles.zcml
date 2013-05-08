@@ -19,4 +19,12 @@
     <depends name="Products.LinguaPlone"/>
   </genericsetup:importStep>
 
+  <genericsetup:upgradeStep
+     title="Upgrade to Plone 4"
+     handler=".upgradehandlers.upgradeToPlone4"
+     source="1"
+     destination="2"
+     profile="policy.zp5343:default"
+     />
+
 </configure>
