@@ -27,4 +27,12 @@
      profile="policy.zp5343:default"
      />
 
+  <genericsetup:upgradeStep
+     title="Upgrade to Plone 4 - cleanup warnings"
+     handler=".upgradehandlers.upgradeToPlone4Cleanup"
+     source="2"
+     destination="3"
+     profile="policy.zp5343:default"
+     />
+
 </configure>

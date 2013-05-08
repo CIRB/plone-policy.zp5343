@@ -1,5 +1,5 @@
 import logging
-
+from persistent.list import PersistentList
 from Products.CMFCore.utils import getToolByName
 from Products.LinguaPlone.browser.setup import SetupView
 
@@ -24,10 +24,6 @@ def setupLinguaFolders(site, logger):
 
 
 def upgradeToPlone4(context):
-    # Ordinarily, GenericSetup handlers check for the existence of XML files.
-    # Here, we are not parsing an XML file, but we use this text file as a
-    # flag to check that we actually meant for this import step to be run.
-    # The file is found in profiles/default.
     logger = logging.getLogger('policy.zp5343')
 
     site = getToolByName(context, 'portal_url').getPortalObject()
@@ -45,3 +41,20 @@ def upgradeToPlone4(context):
     Members.reindexObject()
 
     setupLinguaFolders(site, logger)
+
+def upgradeToPlone4Cleanup(context):
+    logger = logging.getLogger('policy.zp5343')
+
+    site = getToolByName(context, 'portal_url').getPortalObject()
+
+    del site.__annotations__['collective.recaptcha.settings.RecaptchaSettingsAnnotations']
+
+    portal_transforms = getToolByName(context, 'portal_transforms')
+    
+    # no other way to remove transform when it is broken
+    # because code was uninstalled.
+    html_to_html = portal_transforms._mtmap['text/html']['text/html']
+    html_to_html = [transform for transform in html_to_html if 'fck' not in transform.id]
+    portal_transforms._mtmap['text/html']['text/html'] = PersistentList(html_to_html)
+    
+    portal_transforms._delObject('fck_ruid_to_url', suppress_events=True)
